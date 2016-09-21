@@ -8,6 +8,7 @@
     "wsservice" : "moodle_mobile_app",
     "wsextservice" : "local_mobile",
     "presets" : {"url": "http://learning.trinityhigh.com", "username": ""},
+    "siteurl": "http://learning.trinityhigh.com",
     "sync_ws_on" : true,
     "sync_css_on" : true,
     "sync_cron": 300000,
