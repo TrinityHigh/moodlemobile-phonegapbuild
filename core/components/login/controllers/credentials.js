@@ -24,7 +24,7 @@ angular.module('mm.core.login')
 .controller('mmLoginCredentialsCtrl', function($scope, $state, $stateParams, $mmSitesManager, $mmUtil, $ionicHistory, $mmApp,
             $q, $mmLoginHelper, $translate, $mmContentLinksDelegate, $mmContentLinksHelper) {
 
-    $scope.siteurl = 'http://learning.trinityhigh.com';
+    $scope.siteurl = $stateParams.siteurl;
     $scope.credentials = {
         username: $stateParams.username
     };
