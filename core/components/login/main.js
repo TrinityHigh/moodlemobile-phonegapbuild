@@ -23,9 +23,9 @@ angular.module('mm.core.login', [])
         abstract: true,
         templateUrl: 'core/components/login/templates/base.html',
         cache: false,   // Disable caching to force controller reload.
-        onEnter: function($state) {
-        $state.go('mm_login.credentials', {siteurl: 'http://learning.trinityhigh.com'});
-    }
+        onEnter: function($ionicHistory) {
+            // Ensure that there is no history stack when getting here.
+            $ionicHistory.clearHistory();
         }
     })
 
@@ -52,6 +52,11 @@ angular.module('mm.core.login', [])
         url: '/site',
         templateUrl: 'core/components/login/templates/site.html',
         controller: 'mmLoginSiteCtrl'
+        onEnter: function($state) {
+
+            $state.go('mm_login.credentials', {siteurl: 'http://learning.trinityhigh.com'});
+
+        }
     })
 
     .state('mm_login.credentials', {
