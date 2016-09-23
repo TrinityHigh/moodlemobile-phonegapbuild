@@ -48,23 +48,12 @@ angular.module('mm.core.login', [])
         }
     })
 
-    .state('mm_login.site', {
-        url: '/site',
-        templateUrl: 'core/components/login/templates/site.html',
-        controller: 'mmLoginSiteCtrl'
-        onEnter: function($state) {
-
-            $state.go('mm_login.credentials', {siteurl: 'http://learning.trinityhigh.com'});
-
-        }
-    })
-
     .state('mm_login.credentials', {
         url: '/cred',
         templateUrl: 'core/components/login/templates/credentials.html',
         controller: 'mmLoginCredentialsCtrl',
         params: {
-            siteurl: '',
+            siteurl: 'http://learning.trinityhigh.com',
             username: '',
             urltoopen: '' // For content links.
         },
